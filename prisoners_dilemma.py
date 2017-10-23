@@ -44,8 +44,11 @@ modules = [example0, example1, example2, example3, example4, example5, example6,
 team0, team1, team2, team3, team4, team5, team6, team7, team8, team9, team10, 
 team11, team12, team13, team14, team15]
 
+<<<<<<< HEAD
 modules = [example0, example1, example2, example3, example4, example5, example6, example7, team13]
 
+=======
+>>>>>>> 3fd8e64307301c6c0247d0c0c0e6498c49a22bb6
 # modules = [team1, team2, team3, team4, team5, team13]
 for module in modules:
     importlib.reload(module)
@@ -384,6 +387,7 @@ def post_to_file(string, filename='tournament.txt', directory=''):
  
 ### Call main_play() if this file is executed
 if __name__ == '__main__':
+<<<<<<< HEAD
 
     scores, moves, reports = main_play(modules[:24]) 
     section0, section1, section2, section3 = reports
@@ -782,3 +786,7 @@ if __name__ == '__main__':
     scores, moves, reports = main_play(modules[:8]) # you can decide here how many teams (modules) should play  
     section0, section1, section2, section3 = reports
 
+=======
+    scores, moves, reports = main_play(modules[:24]) 
+    section0, section1, section2, section3 = reports
+>>>>>>> 3fd8e64307301c6c0247d0c0c0e6498c49a22bb6
