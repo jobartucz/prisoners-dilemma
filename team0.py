@@ -12,7 +12,7 @@ strategy_description = 'Can\'t tell you yet'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
-    my_score, their_score are ints.
+    my_score, their_score are ints.'''
     
     import random
     if (random.randint(0,100) < 50):
