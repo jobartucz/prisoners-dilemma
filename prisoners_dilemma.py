@@ -45,6 +45,8 @@ collude = example0
 modules = [example0, example1, example2, example3, example4, example5, example6, example7,
 team0, team1, team2, team3, team4, team5, team6, team7, team8, team9, team10, 
 team11, team12, team13, team14, team15]
+modules = [example0, example1, example2, example3, example4, example5, example6, example7, team13]
+# modules = [team1, team2, team3, team4, team5, team13]
 for module in modules:
     importlib.reload(module)
     print ('reloaded',module)
@@ -125,6 +127,7 @@ def play_round(player1, player2, score1, score2, moves1, moves2):
     Returns a 2-tuple with score1 and score2 incremented by this round
     '''
     
+    # print ("hello")
     RELEASE = 0 # (R, "reward" in literature) when both players collude
     TREAT = 100 # (T, "temptation" in literature) when you betray your partner
     SEVERE_PUNISHMENT = -500 # (S, "sucker" in literature) when your partner betrays you
@@ -145,6 +148,8 @@ def play_round(player1, player2, score1, score2, moves1, moves2):
     
     # Change scores based upon player actions.
     actions = action1 + action2
+    
+    # print (actions)
     if actions == 'cc':
         # Both players collude; get reward.
         score1 += RELEASE
@@ -379,5 +384,5 @@ def post_to_file(string, filename='tournament.txt', directory=''):
  
 ### Call main_play() if this file is executed
 if __name__ == '__main__':
-    scores, moves, reports = main_play(modules[0:4])   
+    scores, moves, reports = main_play(modules[:9]) 
     section0, section1, section2, section3 = reports
