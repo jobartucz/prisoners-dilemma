@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> 3fd8e64307301c6c0247d0c0c0e6498c49a22bb6
 ####
 # Each team's file must define four tokens:
 #     team_name: a string
