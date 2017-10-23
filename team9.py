@@ -7,19 +7,19 @@
 ####
 
 team_name = 'Keegan' # Only 10 chars displayed.
-strategy_name = 'Tit for Tat Method'
+strategy_name = 'Tit for Tat Method, kinda'
 strategy_description = "It starts off with colluding until the opponent betrays,then it betrays because it will continue to read the opponent's history and repeat whatever the last move was that the opponent made"
     
 def move(my_history, their_history, my_score, their_score):
 
     if len(my_history) == 0:
-        return "c"
+        return "b"
 
     if their_history[-1] == "b":
         return "b"
-    return "c"
+    return "b"
     if not their_history:
-        return "c"
+        return "b"
 
 
     if len(their_history) > (self.tournament_attributes['length'] - 3):
@@ -28,7 +28,7 @@ def move(my_history, their_history, my_score, their_score):
     if len(their_history) < 180:
         if len(their_history) > 6:
             if "b" not in their_history[:7]:
-                 return "c"
+                 return "b"
 
     if opponent.defections > 3:
         return "b"

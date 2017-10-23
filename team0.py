@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ####
 # Each team's file must define four tokens:
 #     team_name: a string
@@ -21,7 +20,7 @@ def move(my_history, their_history, my_score, their_score):
     else:
         return 'c'
 '''
-=======
+
 ####
 # Each team's file must define four tokens:
 #     team_name: a string
@@ -82,4 +81,3 @@ if __name__ == '__main__':
               my_score=0, 
               their_score=0,
               result='b')             
->>>>>>> 30c6ee6043ccdcdbc67b57bbf28d21d90ce30b66
