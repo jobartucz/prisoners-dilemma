@@ -7,8 +7,8 @@
 ####
 
 team_name = 'Silas' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+strategy_name = 'Russian Relations'
+strategy_description = 'Collude, but once betrayed, never collude again'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -17,16 +17,14 @@ def move(my_history, their_history, my_score, their_score):
     Make my move.
     Returns 'c' or 'b'. 
     '''
+    if 'b' in their_history:
+        return 'b'
+    else:
+        return 'c'
+    # Theoretically, as long as someone adopts a similar strategy, this should be a winning strategy.
+    # I did not go through the thought process entirely by myself; I watched a video titled "Evolution of Trust"
+    # quite a while ago, and managed to remember the (mostly) winning strategy. 
 
-    # my_history: a string with one letter (c or b) per round that has been played with this opponent.
-    # their_history: a string of the same length as history, possibly empty. 
-    # The first round between these two players is my_history[0] and their_history[0].
-    # The most recent round is my_history[-1] and their_history[-1].
-    
-    # Analyze my_history and their_history and/or my_score and their_score.
-    # Decide whether to return 'c' or 'b'.
-    
-    return 'c'
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
@@ -47,22 +45,41 @@ def test_move(my_history, their_history, my_score, their_score, result):
 
 if __name__ == '__main__':
      
-    # Test 1: Betray on first move.
+    # my_history, my_score, their_score are all placeholders for arguments, my code doesn't actually look at them
+    # Test 1: collude first turn
     if test_move(my_history='',
-              their_history='', 
-              my_score=0,
-              their_score=0,
-              result='b'):
-         print ('Test passed')
-     # Test 2: Continue betraying if they collude despite being betrayed.
-    test_move(my_history='bbb',
-              their_history='ccc', 
-              # Note the scores are for testing move().
-              # The history and scores don't need to match unless
-              # that is relevant to the test of move(). Here,
-              # the simulation (if working correctly) would have awarded 
-              # 300 to me and -750 to them. This test will pass if and only if
-              # move('bbb', 'ccc', 0, 0) returns 'b'.
-              my_score=0, 
-              their_score=0,
-              result='b')             
+                 my_score=0,
+                 their_score=0,
+                 their_history='', 
+                 result='c'):
+         print ('Test 1 passed')
+     # Test 2: Continue Colluding
+    if test_move(my_history='',
+                 my_score=0,
+                 their_score=0,
+                 their_history='c',
+                 result='c'):
+        print ('Test 2 passed')
+    # Test 3: Betray after one betrayal
+    if test_move(my_history='',
+                 my_score=0,
+                 their_score=0,
+                 their_history='b',
+                 result='b'):
+        print ('Test 3 passed')
+    # Test 4: Keep betraying
+    if test_move(my_history='',
+                 my_score=0,
+                 their_score=0,
+                 their_history='ccbcc',
+                 result='b'):
+        print('Test 4 passed')
+    # Test 5: Make sure tests work
+    if test_move(my_history='',
+                 my_score=0,
+                 their_score=0,
+                 their_history='ccbcc',
+                 result='c'):
+        print("The tests don't work")
+    else:
+        print('Ignore that mumbo jumbo. Test 5 passed :)')

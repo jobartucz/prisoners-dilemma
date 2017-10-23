@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 ##### 
+=======
+>>>>>>> 3fd8e64307301c6c0247d0c0c0e6498c49a22bb6
 # Computer Science and Software Engineering
 # PLTW AP CS Principles
 # (c)2014 Project Lead The Way, Inc.
@@ -44,6 +47,11 @@ collude = example0
 modules = [example0, example1, example2, example3, example4, example5, example6, example7,
 team0, team1, team2, team3, team4, team5, team6, team7, team8, team9, team10, 
 team11, team12, team13, team14, team15]
+<<<<<<< HEAD
+=======
+
+# modules = [team1, team2, team3, team4, team5, team13]
+>>>>>>> 3fd8e64307301c6c0247d0c0c0e6498c49a22bb6
 for module in modules:
     importlib.reload(module)
     print ('reloaded',module)
@@ -124,6 +132,10 @@ def play_round(player1, player2, score1, score2, moves1, moves2):
     Returns a 2-tuple with score1 and score2 incremented by this round
     '''
     
+<<<<<<< HEAD
+=======
+    # print ("hello")
+>>>>>>> 3fd8e64307301c6c0247d0c0c0e6498c49a22bb6
     RELEASE = 0 # (R, "reward" in literature) when both players collude
     TREAT = 100 # (T, "temptation" in literature) when you betray your partner
     SEVERE_PUNISHMENT = -500 # (S, "sucker" in literature) when your partner betrays you
@@ -144,6 +156,11 @@ def play_round(player1, player2, score1, score2, moves1, moves2):
     
     # Change scores based upon player actions.
     actions = action1 + action2
+<<<<<<< HEAD
+=======
+    
+    # print (actions)
+>>>>>>> 3fd8e64307301c6c0247d0c0c0e6498c49a22bb6
     if actions == 'cc':
         # Both players collude; get reward.
         score1 += RELEASE
@@ -378,5 +395,9 @@ def post_to_file(string, filename='tournament.txt', directory=''):
  
 ### Call main_play() if this file is executed
 if __name__ == '__main__':
+<<<<<<< HEAD
     scores, moves, reports = main_play(modules[0:24])   
+=======
+    scores, moves, reports = main_play(modules[:24]) 
+>>>>>>> 3fd8e64307301c6c0247d0c0c0e6498c49a22bb6
     section0, section1, section2, section3 = reports
