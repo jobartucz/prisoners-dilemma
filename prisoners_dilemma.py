@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 30c6ee6043ccdcdbc67b57bbf28d21d90ce30b66
-
->>>>>>> cd8ce908a92bf0cba934fd31136f7c2cefa6d113
-##### 
 # Computer Science and Software Engineering
 # PLTW AP CS Principles
 # (c)2014 Project Lead The Way, Inc.
@@ -52,13 +43,9 @@ collude = example0
 modules = [example0, example1, example2, example3, example4, example5, example6, example7,
 team0, team1, team2, team3, team4, team5, team6, team7, team8, team9, team10, 
 team11, team12, team13, team14, team15]
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
 modules = [example0, example1, example2, example3, example4, example5, example6, example7, team13]
->>>>>>> cd8ce908a92bf0cba934fd31136f7c2cefa6d113
+
 # modules = [team1, team2, team3, team4, team5, team13]
 for module in modules:
     importlib.reload(module)
@@ -397,13 +384,13 @@ def post_to_file(string, filename='tournament.txt', directory=''):
  
 ### Call main_play() if this file is executed
 if __name__ == '__main__':
-<<<<<<< HEAD
+
     scores, moves, reports = main_play(modules[:24]) 
     section0, section1, section2, section3 = reports
-=======
+
     scores, moves, reports = main_play(modules[:9]) 
     section0, section1, section2, section3 = reports
-=======
+
 
 ##### 
 # Computer Science and Software Engineering
@@ -453,7 +440,7 @@ modules = [example0, example1, example2, example3, example4, example5, example6,
 team0, team1, team2, team3, team4, team5, team6, team7, team8, team9, team10, 
 team11, team12, team13, team14, team15]
 
->>>>>>> 30c6ee6043ccdcdbc67b57bbf28d21d90ce30b66
+
 for module in modules:
     importlib.reload(module)
     print ('reloaded',module)
@@ -788,12 +775,10 @@ def post_to_file(string, filename='tournament.txt', directory=''):
  
 ### Call main_play() if this file is executed
 if __name__ == '__main__':
-<<<<<<< HEAD
+
     scores, moves, reports = main_play(modules[0:24])   
     section0, section1, section2, section3 = reports
-=======
+
     scores, moves, reports = main_play(modules[:8]) # you can decide here how many teams (modules) should play  
     section0, section1, section2, section3 = reports
->>>>>>> bbc31c5f574f5ea5c4f8dd0e16a1081fe3cf2590
->>>>>>> 30c6ee6043ccdcdbc67b57bbf28d21d90ce30b66
->>>>>>> cd8ce908a92bf0cba934fd31136f7c2cefa6d113
+
