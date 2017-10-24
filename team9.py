@@ -17,20 +17,24 @@ def move(my_history, their_history, my_score, their_score):
 
     if their_history[-1] == "b":
         return "b"
+    else:
+        return "c"
     if not their_history:
         return "c"
-    if their_score > my_score:
-        return "b"
-    if my_score > their_score:
+    else:
         return "c"
-    if my_score < (-70):
+    if my_score > their_score:
         return "b"
     else:
+        return "c"
+    if my_score < (-100):
         return "b"
-
-
-    if len(their_history) > (self.tournament_attributes['length'] - 3):
+    else:
+        return "c"
+    if "b" in their_history[-5]:
         return "b"
+    else:
+        return "c"
 
     if len(their_history) < 180:
         if len(their_history) > 6:
@@ -39,6 +43,8 @@ def move(my_history, their_history, my_score, their_score):
 
     if opponent.defections > 3:
         return "b"
+    else:
+        return "c"
 
 
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
