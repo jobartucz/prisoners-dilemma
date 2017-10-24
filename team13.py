@@ -17,6 +17,8 @@ def move(my_history, their_history, my_score, their_score):
         return 'b'
     elif my_score < (-100):
         return 'b'
+    elif their_score < my_score:
+        return 'c'
     elif their_score > my_score:
         return 'b'
     else:
