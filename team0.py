@@ -1,25 +1,3 @@
-# Each team's file must define four tokens:
-#     team_name: a string
-#     strategy_name: a string
-#     strategy_description: a string
-#     move: A function that returns 'c' or 'b'
-####
-
-team_name = 'Mr. B' # Only 10 chars displayed.
-strategy_name = 'Rubber Chicken'
-strategy_description = 'Can\'t tell you yet'
-    
-def move(my_history, their_history, my_score, their_score):
-    ''' Arguments accepted: my_history, their_history are strings.
-    my_score, their_score are ints.
-    
-    import random
-    if (random.randint(0,100) < 50):
-        return 'b'
-    else:
-        return 'c'
-'''
-
 ####
 # Each team's file must define four tokens:
 #     team_name: a string
@@ -36,11 +14,21 @@ def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.'''
     
-    import random
-    if (random.randint(0,100) < 50):
-        return 'b'
-    else:
-        return 'c'
+    turn = len(my_history)
+              
+    #    we're going to try to get them to collude right away, so collude for the first 5 turns
+                  
+    if turn >= 5:
+        '''if turn == 149:
+            print ('my:',my_history)
+            print ('ot:',their_history)'''
+            
+        recent = their_history[turn-5:turn] #get their last 5 actions
+
+        if 'bbbbb' == recent or 'bcbcb' == recent or 'cbcbc' == recent or turn > 150:
+            return 'b' # if they are betraying, or alternating, betray!
+                 
+    return 'c' # in all other cases, try to collude  
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
