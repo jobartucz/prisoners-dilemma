@@ -24,19 +24,14 @@ def move(my_history, their_history, my_score, their_score):
     else:
         return "c"
     if my_score > their_score:
-        return "c"
-    else:
-        return "c"
-    if my_score < (-50):
         return "b"
     else:
         return "c"
-    if "b" in their_history[-4]:
+    if my_score < (-100):
         return "b"
     else:
         return "c"
-
-    if len(their_history) > (self.tournament_attributes['length'] - 3):
+    if "b" in their_history[-5]:
         return "b"
     else:
         return "c"
