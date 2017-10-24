@@ -10,8 +10,10 @@ team_name = 'Alex' # Only 10 chars displayed.
 strategy_name = 'The name the team gives to this strategy'
 strategy_description = 'How does this strategy decide?'
 t=0
-s=0    
+s=0
+q='c'
 def move(my_history, their_history, my_score, their_score):
+    global q
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
     
@@ -26,11 +28,12 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
-    r=random.randint(4,7)
-    if (len(my_history)%100==0):
-        return 'c'
+    if len(my_history)==0: 
+        return q
+    elif (their_history[-1]=='b'):
+        x='b'
     else:
-        return 'b'
+        return q
         
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
