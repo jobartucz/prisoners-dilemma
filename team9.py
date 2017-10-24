@@ -13,33 +13,43 @@ strategy_description = "It starts off with colluding until the opponent betrays,
 def move(my_history, their_history, my_score, their_score):
 
     if len(my_history) == 0:
-        return "b"
+        return "c"
 
     if their_history[-1] == "b":
         return "b"
-    return "b"
+    else:
+        return "c"
     if not their_history:
-        return "b"
-    if their_score > my_score:
-        return "b"
+        return "c"
+    else:
+        return "c"
     if my_score > their_score:
         return "c"
-    if my_score < (-90):
+    else:
+        return "c"
+    if my_score < (-50):
+        return "b"
+    else:
+        return "c"
+    if "b" in their_history[-4]:
         return "b"
     else:
         return "c"
 
-
     if len(their_history) > (self.tournament_attributes['length'] - 3):
         return "b"
+    else:
+        return "c"
 
     if len(their_history) < 180:
         if len(their_history) > 6:
             if "b" not in their_history[:7]:
-                 return "b"
+                 return "c"
 
     if opponent.defections > 3:
         return "b"
+    else:
+        return "c"
 
 
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.

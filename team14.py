@@ -7,8 +7,8 @@
 ####
 
 team_name = 'Carter' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+strategy_name = 'Random and delayed'
+strategy_description = 'Chooses randomly, then decides what to do based on two moves ago and how much the opponent betrayed.'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -17,6 +17,44 @@ def move(my_history, their_history, my_score, their_score):
     Make my move.
     Returns 'c' or 'b'. 
     '''
+    import random
+    my_choices = {i:my_history.count(i) for i in my_history}
+    their_choices = {i:their_history.count(i) for i in their_history}
+    if len(my_history) <= 8:
+        if random.randint(1,2)%2 == 0:
+            return 'b'
+        else:
+            return 'c'
+    elif len(my_history) < 50:
+        try:
+            if (their_choices['b']) >= (their_choices['c']):
+                if their_history[-2] == 'b':
+                    return 'b'
+                else:
+                    return 'c'
+        except KeyError:
+            return 'b'
+        try:
+            if (their_choices['b']) <= (their_choices['c']):    
+                if their_history[-2] == 'b':
+                    return 'c'
+                else:
+                    if random.randint(1,2)%2 == 0:
+                        return 'c'
+                    else:
+                        return 'b'
+        except KeyError:
+            return 'c'
+    elif len(my_history)>= 50:
+        last_five = their_history[-5]
+        last_five_choices = {i:last_five.count(i) for i in last_five}
+        try:
+            if (their_choices['b']) >= (their_choices['c']):
+                return 'b'
+            else:
+                return 'c'
+        except KeyError:
+            return 'b'
 
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
     # their_history: a string of the same length as history, possibly empty. 
@@ -26,7 +64,7 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    return 'c'
+    
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
