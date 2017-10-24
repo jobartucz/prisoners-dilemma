@@ -25,7 +25,7 @@ def move(my_history, their_history, my_score, their_score):
             
         recent = their_history[turn-5:turn] #get their last 5 actions
 
-        if 'bbbbb' == recent or 'bcbcb' == recent or 'cbcbc' == recent or turn > 150:
+        if 'bbbbb' == recent or 'bcbcb' == recent or 'cbcbc' == recent:
             return 'b' # if they are betraying, or alternating, betray!
                  
     return 'c' # in all other cases, try to collude  
