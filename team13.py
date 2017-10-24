@@ -23,13 +23,9 @@ def move(my_history, their_history, my_score, their_score):
         return 'b'
     else:
         return 'c'
-    if 'b' in their_history[-5:]:
-        return 'b'
-    else:
+    if len(my_history)==0:
         return 'c'
-    if 'b' in their_history or len(their_history)>100:
-        return 'b'
-    elif b in their_history:
+    if their_history[-1]=='b':
         return 'b'
     else:
         return 'c'
