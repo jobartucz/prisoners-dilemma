@@ -19,27 +19,6 @@ def move(my_history, their_history, my_score, their_score):
         return "b"
     else:
         return "c"
-    if not their_history:
-        return "c"
-    else:
-        return "c"
-    if my_score > their_score:
-        return "b"
-    else:
-        return "c"
-    if my_score < (-100):
-        return "b"
-    else:
-        return "c"
-    if "b" in their_history[-5]:
-        return "b"
-    else:
-        return "c"
-
-    if len(their_history) < 180:
-        if len(their_history) > 6:
-            if "b" not in their_history[:7]:
-                 return "c"
 
     if opponent.defections > 3:
         return "b"
