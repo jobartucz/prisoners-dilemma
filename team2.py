@@ -7,7 +7,7 @@
 
 team_name = 'Nate Stier' # Only 10 chars displayed.
 strategy_name = 'Collude but retaliate'
-strategy_description = 'collude until betrayed'
+strategy_description = 'collude until betrayed, then keep betraying'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -44,12 +44,10 @@ def test_move(my_history, their_history, my_score, their_score, result):
             " and should have returned '" + result + "'")
         return False
     
-    if len(my_history)==0: 
-        return 'c'
-    elif my_history[-1]=='c' and their_history[-1]=='b':
-        return 'b' 
+    if 'b' in their_history:
+        return 'b'
     else:
-        return 'c' 
+        return 'c'
 
 if __name__ == '__main__':
      
