@@ -11,13 +11,11 @@ strategy_name = 'Mimic'
 strategy_description = 'The program makes the same move as the opponents previous move c  and c or b and b'
     
 def move(my_history, their_history, my_score, their_score):
-    
-    if their_history[:-1]=='b':
-        return 'c'
+   
+    if their_history[:-1]=='c':
+        return 'b'
     else:
         return 'b'
-    if my_score < (90):
-        return 'c'
     
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
@@ -56,3 +54,4 @@ if __name__ == '__main__':
               my_score=0, 
               their_score=0,
               result='b')             
+
