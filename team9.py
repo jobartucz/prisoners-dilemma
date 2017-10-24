@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-
 ####
-=======
->>>>>>> 540e6792cc12677a5bc8a610b6d46f95cd49eea4
 # Each team's file must define four tokens:
 #     team_name: a string
 #     strategy_name: a string
@@ -17,7 +13,6 @@ strategy_description = "It starts off with colluding until the opponent betrays,
 def move(my_history, their_history, my_score, their_score):
 
     if len(my_history) == 0:
-<<<<<<< HEAD
         return "b"
 
     if their_history[-1] == "b":
@@ -103,8 +98,6 @@ strategy_description = "It starts off with colluding until the opponent betrays,
 def move(my_history, their_history, my_score, their_score):
 
     if len(my_history) == 0:
-=======
->>>>>>> 540e6792cc12677a5bc8a610b6d46f95cd49eea4
         return "c"
 
     if their_history[-1] == "b":
@@ -174,7 +167,4 @@ if __name__ == '__main__':
               my_score=0, 
               their_score=0,
               result='b')             
-<<<<<<< HEAD
 
-=======
->>>>>>> 540e6792cc12677a5bc8a610b6d46f95cd49eea4
