@@ -7,8 +7,8 @@
 ####
 
 team_name = 'Mahamed' # Only 10 chars displayed.
-strategy_name = 'collude'
-strategy_description = 'Always collude'
+strategy_name = 'Collude but retaliate'
+strategy_description = 'Collude but retaliate'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Make my move based 0n our history with this player.
@@ -24,7 +24,11 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    return 'c'
+    if (their_history.find('b') > -1):
+
+        return 'b'
+    else:
+        return 'c'
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
@@ -54,7 +58,7 @@ if __name__ == '__main__':
          print ('Test passed')
      # Test 2: Continue betraying if they collude despite being betrayed.
     test_move(my_history='bbb',
-              their_history='ccc', 
+              their_history='ccb', 
               # Note the scores are for testing move().
               # The history and scores don't need to match unless
               # that is relevant to the test of move(). Here,
