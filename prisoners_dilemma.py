@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 540e6792cc12677a5bc8a610b6d46f95cd49eea4
 # Computer Science and Software Engineering
 # PLTW AP CS Principles
 # (c)2014 Project Lead The Way, Inc.
