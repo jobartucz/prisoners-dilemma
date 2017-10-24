@@ -7,8 +7,8 @@
 ####
 
 team_name = 'Mahamed' # Only 10 chars displayed.
-strategy_name = 'collude'
-strategy_description = 'collude'
+strategy_name = 'Collude but retaliate'
+strategy_description = 'Collude but retaliate'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Make my move based 0n our history with this player.
