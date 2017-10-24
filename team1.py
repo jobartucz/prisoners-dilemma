@@ -12,7 +12,7 @@ strategy_description = 'The program makes the same move as the opponents previou
     
 def move(my_history, their_history, my_score, their_score):
     
-    if their_history[:-1]=='b':
+    if len (their_history)=='b':
         return 'c'
     else:
         return 'b'
