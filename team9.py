@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-
 ####
-=======
->>>>>>> 540e6792cc12677a5bc8a610b6d46f95cd49eea4
 # Each team's file must define four tokens:
 #     team_name: a string
 #     strategy_name: a string
@@ -17,26 +13,17 @@ strategy_description = "It starts off with colluding until the opponent betrays,
 def move(my_history, their_history, my_score, their_score):
 
     if len(my_history) == 0:
-<<<<<<< HEAD
-        return "b"
+        return "c"
 
     if their_history[-1] == "b":
         return "b"
-    return "b"
-    if not their_history:
-        return "b"
-
-
-    if len(their_history) > (self.tournament_attributes['length'] - 3):
-        return "b"
-
-    if len(their_history) < 180:
-        if len(their_history) > 6:
-            if "b" not in their_history[:7]:
-                 return "b"
+    else:
+        return "c"
 
     if opponent.defections > 3:
         return "b"
+    else:
+        return "c"
 
 
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
@@ -103,8 +90,6 @@ strategy_description = "It starts off with colluding until the opponent betrays,
 def move(my_history, their_history, my_score, their_score):
 
     if len(my_history) == 0:
-=======
->>>>>>> 540e6792cc12677a5bc8a610b6d46f95cd49eea4
         return "c"
 
     if their_history[-1] == "b":
@@ -174,7 +159,4 @@ if __name__ == '__main__':
               my_score=0, 
               their_score=0,
               result='b')             
-<<<<<<< HEAD
 
-=======
->>>>>>> 540e6792cc12677a5bc8a610b6d46f95cd49eea4

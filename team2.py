@@ -1,5 +1,4 @@
-####
-# Each team's file must define four tokens:
+# Each team's file must define four tokens
 #     team_name: a string
 #     strategy_name: a string
 #     strategy_description: a string
@@ -7,8 +6,8 @@
 ####
 
 team_name = 'Nate Stier' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+strategy_name = 'Collude but retaliate'
+strategy_description = 'collude until betrayed, then keep betraying'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -26,7 +25,10 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    return 'c'
+    if 'b' in their_history:
+        return 'b'
+    else:
+        return 'c'
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
@@ -44,19 +46,21 @@ def test_move(my_history, their_history, my_score, their_score, result):
             ") returned " + "'" + real_result + "'" +
             " and should have returned '" + result + "'")
         return False
+    
+
 
 if __name__ == '__main__':
      
     # Test 1: Betray on first move.
-    if test_move(my_history='',
-              their_history='', 
+    if test_move(my_history='c',
+              their_history='b', 
               my_score=0,
               their_score=0,
               result='b'):
          print ('Test passed')
      # Test 2: Continue betraying if they collude despite being betrayed.
-    test_move(my_history='bbb',
-              their_history='ccc', 
+    test_move(my_history='ccb',
+              their_history='ccb', 
               # Note the scores are for testing move().
               # The history and scores don't need to match unless
               # that is relevant to the test of move(). Here,
