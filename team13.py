@@ -11,7 +11,8 @@ strategy_name = 'Tit-for-tat'
 strategy_description = 'copy history of opponet'
     
 def move(my_history, their_history, my_score, their_score):
-
+    if my_history == 0:
+        return 'b'
     if 'b' in their_history[-1:]:
         return 'b'
     elif my_score < (-100):
@@ -50,7 +51,7 @@ if __name__ == '__main__':
      
     # Test 1: Betray on first move.
     if test_move(my_history='b',
-              their_history='', 
+              their_history='b', 
               my_score=0,
               their_score=0,
               result='b'):
