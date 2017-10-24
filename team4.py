@@ -7,8 +7,8 @@
 ####
 
 team_name = 'Brennhan' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+strategy_name = 'Bipolar Pacifist'
+strategy_description = 'copys person last move (tit for tat)'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -26,6 +26,11 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
+    if len(my_history) == 0:
+        return 'c'
+    # React to the opponent's last move
+    if their_history[-1] == 'b':
+        return b
     return 'c'
 
     
